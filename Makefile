@@ -1,6 +1,6 @@
 NAME = libft.a
 
-SRC = *.c
+SRC = ft_*.c
 OBJ = *.o
 
 CFLAGS = -Wall -Wextra -Werror
