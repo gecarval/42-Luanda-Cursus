@@ -3,19 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marcsilv <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: xjose <xjose@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/14 10:41:51 by marcsilv          #+#    #+#             */
-/*   Updated: 2024/05/14 10:43:07 by marcsilv         ###   ########.fr       */
+/*   Created: 2024/05/13 18:38:30 by xjose             #+#    #+#             */
+/*   Updated: 2024/05/14 09:41:20 by xjose            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isascii(int c);
-
 int	ft_isascii(int c)
 {
-	if (c >= 0 && c <= 128)
-		return (1);
-	else
-		return (0);
+	return (c >= 0 && c <= 127);
 }
