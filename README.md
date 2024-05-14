@@ -18,8 +18,8 @@ PT - REGRAS DE COMMIT:
 - Antes de alterar códigos feitos converse com o peer que fez o código (sem conclusões, chame um terceiro);
 
 Como mudar a Branch:
-- git checkout -b <NomedaBranch>
-- git push -u origin <NomedaBranch>
+- git checkout -b (NomedaBranch)
+- git push -u origin (NomedaBranch)
 
 Como mudar para master:
 - git checkout -b main
