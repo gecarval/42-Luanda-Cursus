@@ -1,21 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marcsilv <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/14 10:43:24 by marcsilv          #+#    #+#             */
-/*   Updated: 2024/05/14 10:44:30 by marcsilv         ###   ########.fr       */
+/*   Created: 2024/05/14 11:45:00 by marcsilv          #+#    #+#             */
+/*   Updated: 2024/05/14 11:45:06 by marcsilv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isdigit(int c);
+int	ft_strcmp(char *s1, char *s2);
 
-int	ft_isdigit(int c)
+int	ft_strcmp(char *s1, char *s2)
 {
-	if (c >= 48 && c <= 57)
-		return (1);
-	else
+	unsigned int	i;
+
+	i = 0;
+	while (s1[i] == s2[i] && s1[i] != '\0')
+	{
+		i++;
+	}
+	if (s1[i] == s2[i])
+	{
 		return (0);
+	}
+	else
+	{
+		return (s1[i] - s2[i]);
+	}
 }
