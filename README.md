@@ -17,10 +17,10 @@ PT - REGRAS DE COMMIT:
 - Cada projecto deve ter um ReadMe descrevendo o que foi feito;
 - Antes de alterar códigos feitos converse com o peer que fez o código (sem conclusões, chame um terceiro);
 
-Como mudar a Branch
-git checkout -b <NomedaBranch>
-git push -u origin <NomedaBranch>
+Como mudar a Branch:
+- 'git checkout -b <NomedaBranch>'
+- 'git push -u origin <NomedaBranch>'
 
-como mudar para master
-git checkout -b main
-git push -u origin main
+Como mudar para master:
+- 'git checkout -b main'
+- 'git push -u origin main'
