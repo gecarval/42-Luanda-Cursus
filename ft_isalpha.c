@@ -3,19 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marcsilv <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: xjose <xjose@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/14 10:32:51 by marcsilv          #+#    #+#             */
-/*   Updated: 2024/05/14 10:38:10 by marcsilv         ###   ########.fr       */
+/*   Created: 2024/05/06 15:32:35 by xjose             #+#    #+#             */
+/*   Updated: 2024/05/14 09:36:33 by xjose            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalpha(int c);
-
-int	ft_isalpha(int c);
+int	ft_isalpha(int c)
 {
-	if ((c >= 65 && c <= 90) || (c > 97 && 122))
-		return (1);
-	else
-		return (0);
+	return ((c >= 65 && c <= 90) || (c >= 97 && c <= 122));
 }
