@@ -28,11 +28,7 @@ int	ft_atoi(const char *nptr)
 		nptr++;
 	if (*nptr == '-')
 		sign = -1;
-	while (*nptr == '-' || *nptr == '+')
-		++nptr;
-	if (*nptr == '-')
-		sign = -1;
-	while (*nptr == '-' || *nptr == '+')
+	if (*nptr == '-' || *nptr == '+')
 		++nptr;
 	while (ft_isdigit(*nptr))
 	{
