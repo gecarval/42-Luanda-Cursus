@@ -1,39 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: xjose <xjose@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/14 10:02:02 by xjose             #+#    #+#             */
-/*   Updated: 2024/05/15 15:28:08 by xjose            ###   ########.fr       */
+/*   Created: 2024/05/15 12:34:08 by xjose             #+#    #+#             */
+/*   Updated: 2024/05/15 15:28:45 by xjose            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_isspace(int c)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	return (c == ' ' || (c >= '\t' && c <= '\v'));
-}
+	size_t	i;
 
-int	ft_atoi(const char *nptr)
-{
-	int	sign;
-	int	nbr;
-
-	sign = 1;
-	nbr = 0;
-	while (ft_isspace(*nptr))
-		nptr++;
-	if (*nptr == '-')
-		sign = -1;
-	if (*nptr == '-' || *nptr == '+')
-		++nptr;
-	while (ft_isdigit(*nptr))
-	{
-		nbr = (nbr * 10) + (*nptr - '0');
-		nptr++;
-	}
-	return (nbr * sign);
+	i = 0;
+	if (!n)
+		return (0);
+	while ((char *)s1 && (*((char *)s1 + i) == *((char *)s2 + i)) && i < n)
+		i++;
+	return (*((unsigned char *)s1 + i) - *((unsigned char *)s2 + i));
 }
