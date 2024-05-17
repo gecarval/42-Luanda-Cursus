@@ -6,7 +6,7 @@
 /*   By: gecarval <gecarval@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/17 19:20:52 by gecarval          #+#    #+#             */
-/*   Updated: 2024/05/17 19:21:19 by gecarval         ###   ########.fr       */
+/*   Updated: 2024/05/17 19:40:03 by gecarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ char	*ft_itoa(int n)
 	unsigned int	number;
 	unsigned int	length;
 
+	number = n;
 	length = ft_number_size(n);
 	string = (char *)malloc(sizeof(char) * (length + 1));
 	if (string == NULL)
@@ -44,8 +45,6 @@ char	*ft_itoa(int n)
 		string[0] = '-';
 		number = -n;
 	}
-	else
-		number = n;
 	if (number == 0)
 		string[0] = '0';
 	string[length] = '\0';
