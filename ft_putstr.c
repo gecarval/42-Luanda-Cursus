@@ -1,20 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: xjose <xjose@student.42.fr>                +#+  +:+       +#+        */
+/*   By: gecarval <gecarval@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/13 17:54:29 by xjose             #+#    #+#             */
-/*   Updated: 2024/05/14 15:16:59 by xjose            ###   ########.fr       */
+/*   Created: 2024/05/16 18:27:55 by gecarval          #+#    #+#             */
+/*   Updated: 2024/05/16 19:34:59 by gecarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
-int	main(void)
+void	ft_putstr_fd(char *s, int fd)
 {
-	printf("%d \n", ft_isdigit('o'));
-	return (0);
+	int	i;
+
+	i = -1;
+	while (s[++i])
+		write(fd, &s[i], 1);
 }

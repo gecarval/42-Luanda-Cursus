@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: xjose <xjose@student.42.fr>                +#+  +:+       +#+        */
+/*   By: gecarval <gecarval@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/14 09:48:52 by xjose             #+#    #+#             */
-/*   Updated: 2024/05/14 14:01:46 by xjose            ###   ########.fr       */
+/*   Created: 2024/05/15 09:37:26 by gecarval          #+#    #+#             */
+/*   Updated: 2024/05/15 13:40:10 by gecarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,6 @@ char	*ft_strrchr(const char *s, int c)
 			return ((char *)s + length);
 	}
 	if (c == '\0')
-		return ((char *)s + length);
+		return ((char *)s);
 	return (0);
 }
