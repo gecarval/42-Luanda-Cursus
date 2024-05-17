@@ -1,25 +1,39 @@
-// ESTOU EM CASA, ENTÃO NÃO DEU PARA COLOCAR CABEÇALHO, NEM VERIFICAR A NORMA CÊS PODEM COLOCAR 
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: gecarval <gecarval@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/05/15 19:30:43 by gecarval          #+#    #+#             */
+/*   Updated: 2024/05/16 15:22:13 by gecarval         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-char    *ft_strnstr(const char *big, const char *little, size_t len)
+char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
-    size_t  i;
-    size_t  c;
-    char  *str;
+	size_t	i;
+	size_t	j;
 
-    str = (char *)big;
-    i = 0;
-    if (ft_strlen(little) == 0 || big == little)
-        return ((char *)big);
-    while (i < len && str[i] != '\0')
-    {
-        c = 0;
-        while (str[i + c] != '\0' && little[i] != '\0'
-                && str[i + c] == little[c] && i + c < len)
-          c++;
-        if (c == ft_strlen(little))
-          return (str + i);
-        i++;
-    }
-    return (0);
+	i = 0;
+	j = 0;
+	if (!little || !little[0])
+		return ((char *)big);
+	while (big[i] && i < len)
+	{
+		if (big[i] == little[j])
+		{
+			while (big[i + j] == little[j] && (i + j) < len)
+			{
+				if (!little[j + 1])
+					return ((char *)big + i);
+				j++;
+			}
+			j = 0;
+		}
+		i++;
+	}
+	return (NULL);
 }

@@ -1,24 +1,24 @@
-// ESTOU EM CASA, ENTÃO NÃO DEU PARA COLOCAR CABEÇALHO, NEM VERIFICAR A NORMA CÊS PODEM COLOCAR(PLEASE)
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: gecarval <gecarval@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/05/16 17:19:12 by gecarval          #+#    #+#             */
+/*   Updated: 2024/05/16 19:35:29 by gecarval         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-char    *ft_strdup(const char *s)
+char	*ft_strdup(const char *s)
 {
-    size_t  len;
-    size_t     i;
-    char    *str;
-    char    *ptrstr;
+	char	*str;
 
-    ptrstr = (char *)s;
-    len = ft_strlen(s);
-    i = 0;
-    str = (char *)malloc((len - 1) * sizeof(char));
-    if (str == NULL)
-        return (NULL);
-    while (i < len)
-    {
-        str[i] = ptrstr[i];
-        i++;
-    }
-    str[i] = '\0';
-    return (str);
+	str = (char *)malloc(sizeof(char *) * (ft_strlen(s) + 1));
+	if (!str)
+		return (NULL);
+	ft_strlcpy(str, s, ft_strlen(s) + 1);
+	return (str);
 }

@@ -1,26 +1,26 @@
-// ESTOU EM CASA, ENTÃO NÃO DEU PARA COLOCAR CABEÇALHO, NEM VERIFICAR A NORMA CÊS PODEM COLOCAR 
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: gecarval <gecarval@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/05/16 19:07:38 by gecarval          #+#    #+#             */
+/*   Updated: 2024/05/16 19:34:38 by gecarval         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-char *ft_substr(char const *s, unsigned int start, size_t len)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-    size_t  length;
-    size_t  i;
-    char    *sub;
-    char    *ptr;
+	char	*str;
 
-    length = ft_strlen(s);
-    if (start >= length)
-        return (NULL);
-    sub = (char *)s + start;
-    ptr = (char *)malloc((len + 1) * sizeof(*s));
-    if (ptr == NULL)
-        return (NULL);
-    i = 0;
-    while (i < len && sub[i] != '\0')
-    {
-        ptr[i] = sub[i];
-        i++;
-    }
-    ptr[i] = '\0'; 
-    return (ptr);
+	str = (char *)malloc(sizeof(char) * len);
+	if (!str)
+		return (NULL);
+	str[len] = '\0';
+	while (s[start + len] && len--)
+		str[len] = s[start + len];
+	return (str);
 }

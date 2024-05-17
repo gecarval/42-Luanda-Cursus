@@ -1,24 +1,35 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: gecarval <gecarval@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2024/05/14 18:09:17 by gecarval          #+#    #+#              #
+#    Updated: 2024/05/15 15:24:09 by gecarval         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+CC = cc
+FLAGS = -Wall -Wextra -Werror
 NAME = libft.a
-
-SRC = ft_*.c
-OBJ = *.o
-
-CFLAGS = -Wall -Wextra -Werror
-
-CC = gcc
+LIBGCH = libft.h.gch
+LIB = libft.h
+CFILES = ft_*.c
+OFILES = ft_*.o
+RM = rm -f
 
 all: $(NAME)
 
 $(NAME):
-	$(CC) $(CFLAGS) -c $(SRC) -I ./
-	$(CC) $(CFLAGS) $(OBJ) -o app
-	rm -f $(OBJ)
-	clear
+	$(CC) $(FLAGS) -c $(LIB) $(CFILES) -I./
+	ar rc $(NAME) $(LIBGCH) $(OFILES)
+	$(CC) ft_main.c -L. -lft
 
-clean: 
-	rm -f $(OBJ)
+clean:
+	$(RM) $(OFILES) $(LIBGCH)
 
 fclean: clean
-	rm -f app
+	$(RM) $(NAME) a.out
 
 re: fclean all
