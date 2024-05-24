@@ -1,5 +1,5 @@
-# 42-Luanda-Cursus
-This is the 42 Luanda peer repository
+# Cursus 
+This is the peer repository
 
 EN - COMMIT RULES:
 - Commit format (username, Date, Project, Changed files);
